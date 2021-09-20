@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit info</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/student-update}" th:object="${student}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <br/>
+    <label for="surname">Surname</label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="Surname">
+    <br/>
+    <label for="study_group">Group</label>
+    <input type="text" th:field="*{study_group}" id="study_group" placeholder="Group">
+    <br/>
+    <label for="course">Course</label>
+    <input type="number" th:field="*{course}" id="course">
+
+    <input type="submit" value="Apply changes"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+
+<
+
+<hr>
+
+<div th:switch="${allStudentsList}">
+
+    <h2 th:case="null">No students found :/</h2>
+
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Group</th>
+                <th>Course</th>
+                <th>Operation</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="student : ${allStudentsList}">
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.surname}"></td>
+                <td th:text="${student.study_group}"></td>
+                <td th:text="${student.course}"></td>
+                <td>
+                    <a th:href="@{student-delete/{id}(id=${student.id})}">Delete</a>
+                    <a th:href="@{student-update/{id}(id=${student.id})}">Edit</a>
+                    <a th:href="@{students/{id}(id=${student.id})}">Profile</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/student-create">Add new student</a></p>
+</div>
+
+</body>
+</html>

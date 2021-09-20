@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="student" type="com.dimevision.springboot.managementsystem.entity.Student"*/-->
+<form action="#" th:action="@{/student-create}" th:object="${student}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <br/>
+    <label for="surname">Surname</label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="Surname">
+    <br/>
+    <label for="study_group">Group</label>
+    <input type="text" th:field="*{study_group}" id="study_group" placeholder="Group">
+    <br/>
+    <label for="course">Course</label>
+    <input type="number" th:field="*{course}" id="course">
+
+    <input type="submit" value="Add Student">
+</form>
+
+</body>
+</html>
