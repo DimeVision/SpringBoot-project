@@ -15,7 +15,7 @@ CREATE TABLE users (
     enabled TINYINT(1)
 );
 
-CREATE TABLE roles (
+CREATE TABLE authorities (
     id        INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username  VARCHAR(50) NOT NULL,
     role_name VARCHAR(50) NOT NULL,
